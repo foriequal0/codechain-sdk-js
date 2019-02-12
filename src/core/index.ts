@@ -599,7 +599,7 @@ export class Core {
                 allowedScriptHashes == null ? [] : allowedScriptHashes,
             metadata,
             output: new AssetMintOutput({
-                supply: supply == null ? null : U64.ensure(supply),
+                supply: supply == null ? U64.MAX_VALUE : U64.ensure(supply),
                 recipient: AssetTransferAddress.ensure(recipient)
             }),
             approvals
@@ -680,7 +680,7 @@ export class Core {
             shardId,
             assetType: H160.ensure(assetType),
             output: new AssetMintOutput({
-                supply: supply == null ? null : U64.ensure(supply),
+                supply: supply == null ? U64.MAX_VALUE : U64.ensure(supply),
                 recipient: AssetTransferAddress.ensure(recipient)
             }),
             approvals
